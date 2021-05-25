@@ -20,8 +20,15 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
+  data(){
+    return{
+       player: new Audio(),
+    }
+  },
   mounted() {
+    var _this = this;
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
     const minsEl = document.getElementById("mins");
@@ -53,6 +60,18 @@ export default {
     countdown();
 
     setInterval(countdown, 1000);
+
+    $(document).ready(function(){ 
+      swal({
+            title: `Time left for Birthday! Days: ${daysEl.innerHTML } Hrs: ${hoursEl.innerHTML } Mins: ${minsEl.innerHTML }`,
+            icon: "info",
+            dangerMode: false,
+        })
+        .then((ok) => {
+          _this.player.src = require('../assets/happybday.mp3');
+          _this.player.play();
+        })
+    });
   },
 };
 </script>
