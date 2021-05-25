@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style=' background: #333744 !important;'>
     <AddGreeting :socket="socket" @addGreeting="addGreeting" />
     <Cards :greetings="greetings" />
     <b-button

@@ -22,7 +22,7 @@
       <b-form-input
         id="input-2"
         v-model.trim="userName"
-        placeholder="Enter name"
+        placeholder="Your name"
         required
       ></b-form-input>
     </div>
