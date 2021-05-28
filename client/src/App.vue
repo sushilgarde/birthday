@@ -67,7 +67,7 @@ export default {
           setInterval(function(){
             _this.player.src = require('./assets/happybday.mp3');
             _this.player.play();
-          }, 90000)
+          }, 20000)
         })
     });
   },
