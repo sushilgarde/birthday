@@ -56,7 +56,7 @@ export default {
 
     $(document).ready(function(){ 
       swal({
-            title: `Time left for Birthday! Days: ${daysEl.innerHTML } Hrs: ${hoursEl.innerHTML } Mins: ${minsEl.innerHTML }`,
+            title: `Time left for Birthday! ${daysEl.innerHTML } Day | ${hoursEl.innerHTML } Hrs |${minsEl.innerHTML } Mins`,
             icon: "info",
             dangerMode: false,
         })
