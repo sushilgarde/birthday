@@ -1,7 +1,18 @@
 <template>
-  <div style=' background: #333744 !important;'>
+  <div style="background: #333744 !important">
     <AddGreeting :socket="socket" @addGreeting="addGreeting" />
-    <Cards :greetings="greetings" />
+    <div style='margin: 2rem'>
+      <div class="text-center" v-if="cardsLoading">
+        <b-spinner variant="primary" label="Spinning"></b-spinner>
+      </div>
+
+      <b-card v-if="cardsLoading">
+        <b-skeleton animation="fade" width="85%"></b-skeleton>
+        <b-skeleton animation="fade" width="55%"></b-skeleton>
+        <b-skeleton animation="fade" width="70%"></b-skeleton>
+      </b-card>
+    </div>
+    <Cards :greetings="greetings" v-if="!cardsLoading"/>
     <b-button
       @click="$router.push('/')"
       style="z-index: 1000; position: fixed; right: 10px; bottom: 10px"
@@ -15,7 +26,7 @@
 import AddGreeting from "./AddGreeting";
 import Cards from "./Cards";
 import io from "socket.io-client";
-import axios from 'axios'
+import axios from "axios";
 // import Balloons from './Balloons.vue';
 
 export default {
@@ -26,8 +37,12 @@ export default {
   },
   data() {
     return {
-      greetings: [],
+      greetings: [{
+        text: 'Wishing you a spectacular celebration and a fabulous year ahead! <br> Happy Birthday!!🎂🎉',
+        userName: "Sushil"
+      }],
       socket: "",
+      cardsLoading: true,
     };
   },
   methods: {
@@ -48,13 +63,14 @@ export default {
 
   mounted() {
     axios.get("/commentsinsession/" + "300594").then((res) => {
-      if(res.data.length>0){
-        res.data.forEach(greeting=>{
+      if (res.data.length > 0) {
+        res.data.forEach((greeting) => {
           this.greetings.push({
             text: greeting.text,
-            userName: greeting.user
-          })
-        })
+            userName: greeting.user,
+          });
+        });
+        this.cardsLoading= false;
       }
     });
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="countdown" style="position: fixed; z-index:1000; height: 10px">
-    <div class="counter-el days-c">
+    <div class="counter-el days-c" style='display: none'>
       <p class="big-text" id="days">25</p>
       <span>Days</span>
     </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="counter-el sec-c">
       <p class="big-text" id="seconds">25</p>
-      <span>Second</span>
+      <span>Seconds</span>
     </div>
   </div>
 </template>
