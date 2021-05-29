@@ -9,6 +9,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Navbar from './components/Navbar.vue'
 import $ from 'jquery'
+import swal from 'sweetalert'
 
 export default {
   name: 'App',
@@ -56,7 +57,9 @@ export default {
 
     $(document).ready(function(){ 
       swal({
-            title: `Time left for Birthday! ${hoursEl.innerHTML } Hrs |${minsEl.innerHTML } Mins`,
+            title:'Time left for Birthday!',
+            html:true,
+            text: `${hoursEl.innerHTML } Hrs | ${minsEl.innerHTML } Mins`,
             icon: "info",
             dangerMode: false,
         })
@@ -84,4 +87,15 @@ export default {
   background: #333744!important;
   height: 100vh;
 }
+
+.swal-text{
+  color: magenta;
+  border: 1px solid lightblue;
+  padding: 10px;
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
 </style>

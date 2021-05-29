@@ -1,8 +1,8 @@
 <template>
   <div class="countdown" style="position: fixed; z-index:1000; height: 10px">
-    <div class="counter-el days-c" style='display: none'>
+    <div class="counter-el days-c">
       <p class="big-text" id="days">25</p>
-      <span>Days</span>
+      <span>Day</span>
     </div>
     <div class="counter-el hours-c">
       <p class="big-text" id="hours">23</p>

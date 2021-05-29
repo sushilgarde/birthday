@@ -2,6 +2,7 @@
   <div>
     <b-button @click="$router.push('/add-greeting')" style='z-index:1000; position:fixed; right: 10px; bottom: 10px' variant='success'> + Add Greeting</b-button>
     <canvas id="c"></canvas>
+    <p style='left: 2rem; bottom:2rem; font-size: 80%; color:#FFFAFA'>&#169; 2020 Sushil S Garde</p>
   </div>
 </template>
 
