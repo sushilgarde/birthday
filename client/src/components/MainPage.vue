@@ -1,8 +1,8 @@
 <template>
   <div>
     <b-button @click="$router.push('/add-greeting')" style='z-index:1000; position:fixed; right: 10px; bottom: 10px' variant='success'> + Add Greeting</b-button>
-    <canvas id="c"></canvas>
-    <p style='left: 2rem; bottom:2rem; font-size: 80%; color:#FFFAFA'>&#169; 2020 Sushil S Garde</p>
+    <canvas id="c" style="font-size: 80%"></canvas>
+    <div style='left: 10px; bottom:10px; font-size: 80%; color:#FFFAFA;z-index:1000; position:fixed;'>&#169; 2021 Sushil S Garde</div>
   </div>
 </template>
 
@@ -17,9 +17,9 @@ export default {
       hw = w / 2, // half-width
       hh = h / 2,
       opts = {
-        strings: ["HAPPY B'DAY!"," VAISHALI!!"],
+        strings: ["  HAPPY B'DAY","  VAISHALI!!"],
         charSize: 30,
-        charSpacing: 35,
+        charSpacing: 25,
         lineHeight: 40,
 
         cx: w / 2,
