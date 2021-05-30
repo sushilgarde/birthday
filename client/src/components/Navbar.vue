@@ -17,16 +17,16 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <Timer v-if='$route.path!="/add-greeting"'/>
+    <!-- <Timer v-if='$route.path!="/add-greeting"'/> -->
   </div>
 </template>
 
 <script>
-import Timer from './Timer.vue'
+// import Timer from './Timer.vue'
 
 export default {
   components:{
-    Timer
+    // Timer
   }
 };
 </script>

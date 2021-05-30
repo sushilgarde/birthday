@@ -23,43 +23,43 @@ export default {
   },
   mounted() {
     var _this = this;
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minsEl = document.getElementById("mins");
-    const secondsEl = document.getElementById("seconds");
+    // const daysEl = document.getElementById("days");
+    // const hoursEl = document.getElementById("hours");
+    // const minsEl = document.getElementById("mins");
+    // const secondsEl = document.getElementById("seconds");
 
-    const newYears = "30 May 2021";
+    // const newYears = "30 May 2021";
 
-    function countdown() {
-      const newYearDate = new Date(newYears);
-      const currentDate = new Date();
+    // function countdown() {
+    //   const newYearDate = new Date(newYears);
+    //   const currentDate = new Date();
 
-      const totalSeconds = (newYearDate - currentDate) / 1000;
+    //   const totalSeconds = (newYearDate - currentDate) / 1000;
 
-      const days = Math.floor(totalSeconds / 3600 / 24);
-      const hours = Math.floor(totalSeconds / 3600) % 24;
-      const minutes = Math.floor(totalSeconds / 60) % 60;
-      const seconds = Math.floor(totalSeconds) % 60;
+    //   const days = Math.floor(totalSeconds / 3600 / 24);
+    //   const hours = Math.floor(totalSeconds / 3600) % 24;
+    //   const minutes = Math.floor(totalSeconds / 60) % 60;
+    //   const seconds = Math.floor(totalSeconds) % 60;
 
-      daysEl.innerHTML = days;
-      hoursEl.innerHTML = formatTime(hours);
-      minsEl.innerHTML = formatTime(minutes);
-      secondsEl.innerHTML = formatTime(seconds);
-    }
+    //   daysEl.innerHTML = days;
+    //   hoursEl.innerHTML = formatTime(hours);
+    //   minsEl.innerHTML = formatTime(minutes);
+    //   secondsEl.innerHTML = formatTime(seconds);
+    // }
 
-    function formatTime(time) {
-      return time < 10 ? `0${time}` : time;
-    }
+    // function formatTime(time) {
+    //   return time < 10 ? `0${time}` : time;
+    // }
 
-    countdown();
+    // countdown();
 
-    setInterval(countdown, 1000);
+    // setInterval(countdown, 1000);
 
     $(document).ready(function(){ 
       swal({
-            title:"It's Birthday since..",
-            html:true,
-            text: `${hoursEl.innerHTML[2] -1} Hrs | ${minsEl.innerHTML[2]}${minsEl.innerHTML[3] } Mins`,
+            title:"It's Birthday!!",
+            // html:true,
+            // text: `${hoursEl.innerHTML[2] -1} Hrs | ${minsEl.innerHTML[2]}${minsEl.innerHTML[3] } Mins`,
             icon: "info",
             dangerMode: false,
         })
