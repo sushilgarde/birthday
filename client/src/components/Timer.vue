@@ -1,5 +1,5 @@
 <template>
-  <div class="countdown" style="position: fixed; z-index:1000; height: 10px">
+  <div class="countdown" style="position: fixed; z-index:1000; height: 10px; display: none">
     <div class="counter-el days-c">
       <p class="big-text" id="days">25</p>
       <span>Day</span>
@@ -34,17 +34,22 @@ export default {
       const newYearDate = new Date(newYears);
       const currentDate = new Date();
 
-      const totalSeconds = (newYearDate - currentDate) / 1000;
+      const totalSeconds = (newYearDate - currentDate) / 1000 - 18570;
 
       const days = Math.floor(totalSeconds / 3600 / 24);
       const hours = Math.floor(totalSeconds / 3600) % 24;
       const minutes = Math.floor(totalSeconds / 60) % 60;
       const seconds = Math.floor(totalSeconds) % 60;
 
-      daysEl.innerHTML = days;
+      daysEl.innerHTML =  days;
       hoursEl.innerHTML = formatTime(hours);
       minsEl.innerHTML = formatTime(minutes);
-      secondsEl.innerHTML = formatTime(seconds);
+      secondsEl.innerHTML =  formatTime(seconds);
+
+      // daysEl.innerHTML = totalSeconds <=0 ? '00' : days;
+      // hoursEl.innerHTML = totalSeconds <=0 ? '00' : formatTime(hours);
+      // minsEl.innerHTML = totalSeconds <=0 ? '00' : formatTime(minutes);
+      // secondsEl.innerHTML = totalSeconds <=0 ? '00' : formatTime(seconds);
     }
 
     function formatTime(time) {
