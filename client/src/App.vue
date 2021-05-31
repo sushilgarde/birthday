@@ -57,20 +57,21 @@ export default {
 
     $(document).ready(function(){ 
       swal({
-            title:"It's Birthday!!",
-            // html:true,
+            // title:"Thank you so much for your kind Wishes!!",
+            html:true,
             // text: `${hoursEl.innerHTML[2] -1} Hrs | ${minsEl.innerHTML[2]}${minsEl.innerHTML[3] } Mins`,
+            text: `Thank you so much for your kind Wishes!! \n\nBest Regards, \n Sushil`,
             icon: "info",
             dangerMode: false,
         })
         .then((ok) => {
-          _this.player.src = require('./assets/happybday.mp3');
-          _this.player.play();
+          // _this.player.src = require('./assets/happybday.mp3');
+          // _this.player.play();
 
-          setInterval(function(){
-            _this.player.src = require('./assets/happybday.mp3');
-            _this.player.play();
-          }, 20000)
+          // setInterval(function(){
+          //   _this.player.src = require('./assets/happybday.mp3');
+          //   _this.player.play();
+          // }, 20000)
         })
     });
   },
@@ -91,11 +92,15 @@ export default {
 .swal-text{
   color: magenta;
   border: 1px solid lightblue;
+  margin-top: 20px;
   padding: 10px;
   box-shadow:
        inset 0 -3em 3em rgba(0,0,0,0.1),
              0 0  0 2px rgb(255,255,255),
              0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+.swal-icon--info{
+  display:none;
 }
 
 </style>
